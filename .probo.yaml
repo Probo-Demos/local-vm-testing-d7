@@ -1,4 +1,4 @@
-image: proboci/ubuntu-14.04-lamp:php5.6-nightly
+image: proboci/ubuntu-14.04-lamp:php7.0-nightly
 assets:     
   - d7testsite.sql.gz
 steps:
@@ -11,3 +11,17 @@ steps:
     databaseUpdates: false
     revertFeatures: false
     clearCaches: true
+  - name: Check versions.
+    plugin: Script
+    script:
+      - echo "checking bower version..."
+      - bower -version --allow-root
+      - echo "checking grunt version..."
+      - grunt -version
+      - echo "checking gulp version..."
+      - gulp -v
+      - echo "checking yarn version..."
+      - yarn --version
+      - mysql --version
+      - php -v
+      - apachectl -V
