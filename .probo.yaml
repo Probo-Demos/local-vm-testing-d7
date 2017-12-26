@@ -20,7 +20,7 @@ steps:
       upload_max_filesize: 25M
       post_max_size: 25M
       memory_limit: 256M
-      curl.cainfo: '/etc/ssl/certs/cacert.pem'
+      openssl.cafile: '/etc/ssl/certs/cacert.pem'
   - name: Check versions.
     plugin: Script
     script:
