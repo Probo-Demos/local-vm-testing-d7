@@ -1,12 +1,7 @@
 image: proboci/ubuntu-14.04-lamp:php7.1-nightly
 assets:     
   - d7testsite.sql.gz
-  - cacert.pem
 steps:
-  - name: place cacert.pem
-    plugin: Script
-    script:
-      - cp /assets/cacert.pem /etc/ssl/certs/cacert.pem
   - name: Probo site setup
     plugin: Drupal
     drupalVersion: 7
