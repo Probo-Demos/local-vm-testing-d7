@@ -6,7 +6,7 @@ steps:
   - name: place cacert.pem
     plugin: Script
     script:
-      - cp /src/assets/cacert.pem /etc/ssl/certs/cacert.pem
+      - cp /assets/cacert.pem /etc/ssl/certs/cacert.pem
   - name: Probo site setup
     plugin: Drupal
     drupalVersion: 7
