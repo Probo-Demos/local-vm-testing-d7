@@ -1,0 +1,16 @@
+image: proboci/ubuntu-16.04-dotnet:sdk1.0.1-nightly
+steps:
+  - name: Check versions.
+    plugin: Script
+    script:
+      - echo "checking bower version..."
+      - bower -version --allow-root
+      - echo "checking grunt version..."
+      - grunt -version
+      - echo "checking gulp version..."
+      - gulp -v
+      - echo "checking yarn version..."
+      - yarn --version
+      - mysql --version
+      - php -v
+      - apachectl -V
