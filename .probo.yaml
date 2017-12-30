@@ -15,4 +15,5 @@ steps:
       - php -v
       - apachectl -V
       - dotnet --version
-      - /usr/local/bin/dotnet-test
+      - chmod +x /usr/local/bin/dotnet-1.0.1-test
+      - /usr/local/bin/dotnet-1.0.1-test
