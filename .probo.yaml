@@ -16,4 +16,4 @@ steps:
       - apachectl -V
       - dotnet --version
       - chmod +x /usr/local/bin/dotnet-1.0.1-test
-      - /usr/local/bin/dotnet-1.0.1-test
+      - bash /usr/local/bin/dotnet-1.0.1-test
