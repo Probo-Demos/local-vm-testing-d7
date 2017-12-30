@@ -14,3 +14,4 @@ steps:
       - mysql --version
       - php -v
       - apachectl -V
+      - dotnet --version
