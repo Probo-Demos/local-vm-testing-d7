@@ -1,7 +1,8 @@
 image: proboci/ubuntu-16.04-dotnet:sdk1.0.1-nightly
 steps:
-  - name: LAMP app setup.
-    plugin: LAMPApp
+  - name: DotnetApp Setup.
+    plugin: DotnetApp
+    dllName: lk2-demo.dll
   - name: Check versions..
     plugin: Script
     script:
@@ -17,5 +18,3 @@ steps:
       - php -v
       - apachectl -V
       - dotnet --version
-      - chmod +x /usr/local/bin/dotnet-1.0.1-test
-      - bash /usr/local/bin/dotnet-1.0.1-test
