@@ -3,7 +3,7 @@ steps:
   - name: DotnetApp Setup.
     plugin: DotnetApp
     dllName: lk2-demo.dll
-  - name: Check versions..
+  - name: Check versions.
     plugin: Script
     script:
       - echo "checking bower version..."
