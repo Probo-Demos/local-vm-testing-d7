@@ -27,6 +27,6 @@ steps:
       - yarn --version
       - mysql --version
       - php -v
-      - apachectl -V
+      - apache2 -v
   - name: Generate login link.
     command: "drush --root='/var/www/html/' uli"
