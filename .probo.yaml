@@ -28,5 +28,5 @@ steps:
       - mysql --version
       - php -v
       - apache2 -v
-  - name: Generate login link.
+  - name: Generate login link..
     command: "drush --root='/var/www/html/' uli"
