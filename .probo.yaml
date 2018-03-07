@@ -1,0 +1,33 @@
+assets:     
+  - d7testsite.sql.gz
+steps:
+  - name: Probo site setup.
+    plugin: Drupal
+    drupalVersion: 7
+    database: d7testsite.sql.gz
+    subDirectory: docroot
+    databaseGzipped: true
+    databaseUpdates: false
+    revertFeatures: false
+    clearCaches: true
+    fileProxy: 'https://example.com'
+    phpIniOptions:
+      upload_max_filesize: 25M
+      post_max_size: 25M
+      memory_limit: 256M
+  - name: Check versions.
+    plugin: Script
+    script:
+      - echo "checking bower version..."
+      - bower -version --allow-root
+      - echo "checking grunt version..."
+      - grunt -version
+      - echo "checking gulp version..."
+      - gulp -v
+      - echo "checking yarn version..."
+      - yarn --version
+      - mysql --version
+      - php -v
+      - apache2 -v
+  - name: Generate login link..
+    command: "drush --root='/var/www/html/' uli"
