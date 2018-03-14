@@ -1,4 +1,4 @@
-image: devwithlando/php:7.2-apache
+image: proboci/php:7.2-apache
 assets:     
   - d7testsite.sql.gz
 steps:
