@@ -1,4 +1,4 @@
-image: proboci/ubuntu-16.04-lamp:latest
+image: devwithlando/php:7.2-apache
 assets:     
   - d7testsite.sql.gz
 steps:
