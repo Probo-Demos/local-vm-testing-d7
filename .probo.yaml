@@ -1,0 +1,32 @@
+image: proboci/ubuntu-14.04-lamp:php-7.1
+assets:     
+  - d7testsite.sql.gz
+steps:
+  - name: Probo site setup.
+    plugin: Drupal
+    drupalVersion: 7
+    database: d7testsite.sql.gz
+    subDirectory: docroot
+    databaseGzipped: true
+    databaseUpdates: false
+    revertFeatures: false
+    clearCaches: true
+    fileProxy: 'https://example.com'
+  - name: Check versions.
+    plugin: Script
+    script:
+      - echo "checking bower version..."
+      - bower -version --allow-root
+      - echo "checking grunt version..."
+      - grunt -version
+      - echo "checking gulp version..."
+      - gulp -v
+      - echo "checking yarn version..."
+      - yarn --version
+      - mysql --version
+      - php -v
+      - apache2 -v
+  - name: Generate login link.
+    command: "drush --root='/var/www/html/' uli"
+  - name: Check fileProxy settings.
+    command: "drush --root='/var/www/html/' drush vget stage_*"
