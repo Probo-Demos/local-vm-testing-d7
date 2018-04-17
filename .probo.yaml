@@ -1,4 +1,4 @@
-image: proboci/php:7.2-apache
+image: proboci/ubuntu-14.04-lamp:php-7.1
 assets:     
   - d7testsite.sql.gz
 steps:
@@ -12,10 +12,6 @@ steps:
     revertFeatures: false
     clearCaches: true
     fileProxy: 'https://example.com'
-    phpIniOptions:
-      upload_max_filesize: 25M
-      post_max_size: 25M
-      memory_limit: 256M
   - name: Check versions.
     plugin: Script
     script:
