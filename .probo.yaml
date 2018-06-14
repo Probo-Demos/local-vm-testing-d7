@@ -1,0 +1,15 @@
+image: proboci/ubuntu-16.04-lamp:php7.2-nightly
+assets:     
+  - d7testsite.sql.gz
+steps:
+  - name: Drupal 7 Probo site setup.
+    plugin: Drupal
+    drupalVersion: 7
+    database: d7testsite.sql.gz
+    subDirectory: docroot
+    databaseGzipped: true
+    databaseUpdates: false
+    revertFeatures: false
+    clearCaches: true
+    mysqlCnfOptions:
+      max_allowed_packet: 32M
