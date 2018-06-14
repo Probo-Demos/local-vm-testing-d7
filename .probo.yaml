@@ -12,4 +12,4 @@ steps:
     revertFeatures: false
     clearCaches: true
     mysqlCnfOptions:
-      innodb_file_per_table: OFF
+      max_allowed_packet: 32M
