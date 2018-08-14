@@ -1,0 +1,13 @@
+image: proboci/ubuntu-14.04-lamp:php-5.6 
+assets:     
+  - d7testsite.sql.gz
+steps:
+  - name: Drupal 7 Probo site setup
+    plugin: Drupal
+    drupalVersion: 7
+    database: d7testsite.sql.gz
+    subDirectory: docroot
+    databaseGzipped: true
+    databaseUpdates: false
+    revertFeatures: false
+    clearCaches: true
