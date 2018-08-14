@@ -1,4 +1,4 @@
-image: proboci/lamp:ubuntu14.04-apache2.4-mysql5.5-php5.6
+image: proboci/lamp:ubuntu14.04-php5.6
 assets:     
   - d7testsite.sql.gz
 steps:
