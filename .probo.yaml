@@ -12,8 +12,6 @@ steps:
     revertFeatures: false
     clearCaches: true
     phpIniOptions:
-      post_max_size: 25M
-      memory_limit: 256M
       all:
         upload_max_filesize: 25M
       apache2:
