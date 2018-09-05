@@ -1,0 +1,23 @@
+image: proboci/ubuntu-16.04-lamp:php-7.1
+assets:     
+  - d7testsite.sql.gz
+steps:
+  - name: Drupal 7 Probo site setup with phpIniOptions..
+    plugin: Drupal
+    drupalVersion: 7
+    database: d7testsite.sql.gz
+    subDirectory: docroot
+    databaseGzipped: true
+    databaseUpdates: false
+    revertFeatures: false
+    clearCaches: true
+    phpIniOptions:
+      post_max_size: 25M
+      memory_limit: 256M
+      all:
+        upload_max_filesize: 25M
+      apache2:
+        error_reporting: E_ALL ~E_DEPRECATED
+        display_errors: 0
+      cli:
+        error_reporting: E_ALL
